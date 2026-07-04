@@ -282,6 +282,52 @@ The OCC Bulletin 2023-17 (and the interagency guidance it aligns with) establish
 
 ---
 
+---
+
+## DORA — Digital Operational Resilience Act (EU)
+
+The Digital Operational Resilience Act (Regulation (EU) 2022/2554) applies to virtually all regulated financial entities in the EU — banks, investment firms, payment institutions, insurance companies, and their critical ICT third-party service providers. It became mandatory on **January 17, 2025**.
+
+### Who Must Comply
+- Credit institutions, investment firms, payment institutions, e-money institutions
+- Insurance and reinsurance undertakings
+- Trading venues, central counterparties, CSDs
+- Crypto-asset service providers under MiCA
+- **Critical ICT third-party providers** (including cloud service providers like AWS if designated)
+
+### Key Requirements for SaaS Platforms Serving EU Financial Institutions
+
+**ICT Risk Management (Chapter II):**
+- Maintain an ICT risk management framework covering identification, protection, detection, response, recovery
+- Document all ICT assets and dependencies (your platform is an ICT asset for your bank tenants)
+- Business continuity and DR policies with tested recovery capabilities
+
+**ICT-Related Incident Reporting (Chapter III):**
+- Classify ICT incidents per DORA severity criteria
+- Major incidents must be reported to the competent authority (initial notification within 4 hours of classification, intermediate report within 72 hours, final report within 1 month)
+- Your SaaS platform must support your tenant's incident reporting obligations
+
+**Digital Operational Resilience Testing (Chapter IV):**
+- Basic testing: vulnerability assessments, network security assessments, gap analyses, software source code reviews
+- Advanced testing (for significant entities): Threat-Led Penetration Testing (TLPT) at least every 3 years
+- Your platform may be included in your tenant's TLPT scope
+
+**ICT Third-Party Risk Management (Chapter V):**
+- Financial entities must maintain a register of all ICT third-party arrangements
+- Contractual provisions must include: service descriptions, data locations, SLA metrics, exit strategies, audit rights, incident notification, subcontracting constraints
+- Your contract with EU bank tenants must include these DORA-mandated provisions
+
+### Architecture Implications for SaaS
+- **Incident detection and reporting:** Your monitoring must detect incidents quickly enough for tenants to meet the 4-hour initial notification window. Build automated incident classification per DORA criteria.
+- **Resilience testing support:** Your platform must support tenants' TLPT exercises — provide test environments, cooperate with red teams, allow controlled testing.
+- **Exit strategy:** DORA requires that financial entities can exit ICT arrangements. Your architecture must support data portability and tenant offboarding without undue dependency.
+- **Subcontracting transparency:** If you use sub-processors (AWS is one), you must disclose them to your EU tenants and allow them to object to changes.
+- **Data location:** EU financial entities must know where their data is processed and stored. Document your AWS region strategy clearly.
+
+**Reference:** [DORA Regulation (EU) 2022/2554](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554)
+
+---
+
 ## State Laws — NY DFS Part 500 and California CCPA/CPRA
 
 ### New York — DFS Part 500 (Cybersecurity Regulation)
@@ -391,6 +437,7 @@ AWS secures the infrastructure (physical security, hypervisor, global network). 
 | CFPB Section 1033 (Open Banking) | Final rule published October 2024; compliance begins April 2026 for large institutions | https://www.consumerfinance.gov/personal-financial-data-rights/ |
 | SR 26-2 (Model Risk) | 2026 revision supersedes SR 11-7 for Federal Reserve-supervised entities | https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm |
 | NY DFS Part 500 | 2023 amendments effective November 2023 | https://www.dfs.ny.gov/industry_guidance/cybersecurity |
+| DORA (EU) | Mandatory January 17, 2025 | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554 |
 | OCC Third-Party Risk | Bulletin 2023-17 (interagency guidance) | https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html |
 | OFAC SDN List | Updated frequently (sometimes multiple times per week) | https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists |
 | AWS PCI DSS Responsibility Summary | Check for version aligned with current PCI-DSS v4.0 | https://aws.amazon.com/compliance/pci-dss-level-1-faqs/ |
