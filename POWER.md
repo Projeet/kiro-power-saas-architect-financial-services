@@ -1,9 +1,9 @@
 ---
 name: "saas-architect-for-finance-aws"
 displayName: "SaaS Architect for Finance on AWS"
-description: "AI co-architect for multi-tenant financial services SaaS on AWS — tenancy, financial data protection, PCI-DSS/GLBA/SOX/AML compliance, open banking interoperability (FDX, ISO 20022, PSD2), payments & ledger patterns, fraud detection, capital markets, lending & credit, and Well-Architected Financial Services Industry Lens reviews."
+description: "AI co-architect for multi-tenant financial services SaaS on AWS. Covers tenancy, financial data protection, PCI-DSS/GLBA/SOX/AML compliance, open banking, payments, fraud detection, and Well-Architected FSI Lens reviews."
 keywords: ["finance", "fintech", "banking", "neobank", "payments", "pci-dss", "pci", "cardholder", "pan", "tokenization", "glba", "sox", "aml", "bsa", "fincen", "kyc", "kyb", "open banking", "fdx", "iso 20022", "psd2", "swift", "ach", "rtp", "real-time payments", "ledger", "double-entry", "fraud", "ofac", "sanctions", "lending", "loan origination", "credit decisioning", "fcra", "ecoa", "trading", "capital markets", "fix protocol", "market data", "mifid", "broker-dealer", "finra", "insurtech", "wealth management", "robo-advisory", "sr 11-7", "model risk", "ffiec", "occ", "cfpb", "section 1033", "payment cryptography", "amazon payment cryptography", "financial services", "fsi lens"]
-author: "TBD"
+author: "Projeet Ghosh, Himanshu Dewan, Radheshyam Baliga Bantwal"
 ---
 
 # SaaS Architect for Finance on AWS
@@ -24,9 +24,35 @@ This is not a code generator. It is a reasoning partner that helps you make the 
 
 **What this power does NOT do:** Provide legal opinions on regulatory compliance, advise on licensing strategy (banking charter, broker-dealer registration, money transmitter), or replace a qualified compliance officer, BSA Officer, or PCI-DSS Qualified Security Assessor (QSA).
 
+**Regional scope:** This power covers **US** (primary) and **EU/UK** (secondary) regulatory frameworks. US coverage includes PCI-DSS, GLBA, SOX, BSA/AML, FCRA, ECOA, TILA, Dodd-Frank, SEC/FINRA, FFIEC, OCC, CFPB Section 1033, NY DFS Part 500, and CA CCPA/CPRA. EU/UK coverage includes PSD2, MiFID II/MiFIR, GDPR (financial data aspects), DORA, and ISO 20022. APAC, Middle East, Africa, and Latin America regulations (MAS, HKMA, RBI, APRA, SAMA, OSFI, etc.) are **not covered** — if your platform operates primarily in those regions, this power's regulatory guidance may be incomplete for your jurisdiction.
+
 ## Getting Started
 
 Describe what you're building or what you need help with. No jargon required.
+
+## Available Steering Files
+
+- Setting up tenancy model, silo/pool/bridge → `tenancy-models.md`
+- Tenant data isolation, CDE isolation, IAM → `tenant-isolation.md`
+- Auth, KYC/KYB, SCA, open banking OAuth, consent → `identity-and-onboarding.md`
+- Database design, DynamoDB/RDS/S3 for financial data → `data-partitioning.md`
+- PCI-DSS, GLBA, SOX, BSA/AML, FCRA, regulatory foundations → `financial-compliance-foundations.md`
+- Financial PII, PAN, tokenization, KMS strategy → `pii-financial-data-handling.md`
+- Payments, ACH, RTP, card processing, ledger, idempotency → `payments-and-ledger.md`
+- FDX, Section 1033, PSD2, ISO 20022, open banking → `open-banking-and-interop.md`
+- Fraud detection, AML, SAR/CTR, OFAC, transaction monitoring → `fraud-detection-and-aml.md`
+- Trading, market data, FIX protocol, OMS, MiFID II → `trading-and-market-data.md`
+- Lending, credit decisioning, FCRA, ECOA, adverse action → `lending-and-credit.md`
+- GenAI with financial data, model risk, SR 11-7, RAG → `genai-and-financial-data.md`
+- Audit logging, SOX ITGC, SEC 17a-4 WORM, break-the-glass → `audit-logging-and-access.md`
+- API Gateway, PCI segmentation, mTLS, PrivateLink, WAF → `api-gateway-and-networking.md`
+- SaaS artifacts (HLD, Isolation Matrix, ADR, Onboarding, Tiering) → `artifacts-saas.md`
+- Finance artifacts (PCI Matrix, SOX Matrix, AML Risk, Data Flow Map) → `artifacts-finance.md`
+- Low-Level Design per component → `artifacts-lld.md`
+- Observability, per-tenant metrics, payment SLA, noisy neighbor → `observability-and-operations.md`
+- Resilience, deployment, multi-region, SOX CI/CD, DR → `resilience-and-deployment.md`
+- Cost attribution, per-tenant billing, Marketplace → `cost-attribution-and-billing.md`
+- Architecture review, SaaS Lens + FSI Lens → `saas-lens-review.md`
 
 ### Example Journeys
 
@@ -54,9 +80,11 @@ Before recommending any architecture, identify the customer's segment and regula
 
 **Step 2 — Financial compliance (ask early, before architecture):**
 - Are your tenants licensed financial institutions (banks, credit unions, broker-dealers, insurance companies) or fintech companies operating under a partner bank or third-party license?
+- Which jurisdictions do your tenants operate in? (US, EU/UK, or both? This power covers US + EU/UK regulatory frameworks. If APAC/MENA/LATAM is primary, note that those region-specific regulations are not covered.)
 - Beyond PCI-DSS (if you process card payments): are you subject to GLBA? SOX? BSA/AML obligations? Are you registered with FINRA or the SEC?
 - Do you process card payments or store cardholder data? (Triggers PCI-DSS — load `financial-compliance-foundations.md`)
 - Do you have BSA/AML obligations — SAR filing, CTR reporting, OFAC sanctions screening? (Triggers `fraud-detection-and-aml.md`)
+- For EU/UK: are you subject to PSD2? MiFID II? DORA? (Triggers open banking and trading steering files)
 - Are you building or integrating AI/ML models for credit decisioning, fraud scoring, or trading? (May trigger SR 11-7 model risk governance — load `genai-and-financial-data.md`)
 
 **Step 3 — Business and technical context (ask based on what's still unknown):**
@@ -225,3 +253,8 @@ Default save location: `docs/saas-architecture/` in workspace root.
 | "We're building a loan origination / credit platform" | `lending-and-credit.md` + `financial-compliance-foundations.md` | HLD, Adverse Action Notice design, ADR |
 | "We need SOX-compliant audit logging" | `audit-logging-and-access.md` + `financial-compliance-foundations.md` | SOX ITGC Control Matrix, Audit Log Coverage Matrix |
 | "We're building ISO 20022 / SWIFT payments" | `open-banking-and-interop.md` + `payments-and-ledger.md` | ADR, Financial Data Flow Map |
+
+## Support & Legal
+
+- **License**: Apache-2.0 License
+- **Support**: projeetg@amazon.com, hddewan@amazon.com, rabaliga@amazon.com
