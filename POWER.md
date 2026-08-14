@@ -74,8 +74,9 @@ The agent walks you through a combined SaaS Lens + Financial Services Industry L
 
 Before recommending any architecture, identify the customer's segment and regulatory context. Use progressive discovery — start with 3-4 questions, then dig deeper based on answers.
 
-**Step 1 — Segment identification (ask first, always):**
+**Step 1 — Segment and region identification (ask first, always):**
 - What does your product do and who are your customers? (This determines the segment: banking & neobanking, lending & credit, capital markets & trading, or insurance & wealth management)
+- Which region(s) will your platform operate in? (US, UK, EU, or multi-region?) — This determines which regulatory frameworks apply. If UK/EU: load `regional-compliance-mapping.md` immediately.
 - What types of financial data do you handle? (Account data, payment/transaction data, cardholder data/PAN, credit data, trading data, insurance policy data, investment portfolios?)
 
 **Step 2 — Financial compliance (ask early, before architecture):**
@@ -139,6 +140,7 @@ If you're unsure whether model risk governance applies, ask one clarifying quest
 | Trading, market data, FIX protocol, OMS, MiFID II, Reg SCI, low latency | `trading-and-market-data.md` |
 | Loan origination, credit decisioning, FCRA, ECOA/Reg B, BNPL, loan servicing | `lending-and-credit.md` |
 | GenAI with financial data, Bedrock for finance, SR 11-7, model risk, RAG for finance | `genai-and-financial-data.md` |
+| UK/EU compliance, FCA, PRA, PSD2, UK GDPR, OBIE, DORA, MLR 2017, regional differences, multi-region compliance | `regional-compliance-mapping.md` |
 
 **Load multiple files when topics span domains:**
 - Financial data storage → `data-partitioning.md` + `pii-financial-data-handling.md`
@@ -150,6 +152,9 @@ If you're unsure whether model risk governance applies, ask one clarifying quest
 - Fraud + AML + payments → `fraud-detection-and-aml.md` + `payments-and-ledger.md` + `pii-financial-data-handling.md`
 - SOX-compliant audit logging → `audit-logging-and-access.md` + `financial-compliance-foundations.md`
 - Multi-tenant payment SaaS → `payments-and-ledger.md` + `tenant-isolation.md` + `pii-financial-data-handling.md`
+- **UK-regulated platform** → `regional-compliance-mapping.md` + `financial-compliance-foundations.md` (load regional mapping first for UK-specific frameworks)
+- **Multi-region (US + UK)** → `regional-compliance-mapping.md` + `resilience-and-deployment.md` + `data-partitioning.md` (data residency, dual-region architecture)
+- **UK open banking (OBIE/PSD2)** → `regional-compliance-mapping.md` + `open-banking-and-interop.md` + `identity-and-onboarding.md`
 
 ### Response Style
 
@@ -235,7 +240,7 @@ Default save location: `docs/saas-architecture/` in workspace root.
 | [Multi-Tenant SaaS Storage Strategies](https://docs.aws.amazon.com/whitepapers/latest/multi-tenant-saas-storage-strategies/) | DynamoDB, RDS, S3 partitioning |
 | [SaaS Lens](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/) | SaaS best practices across WA pillars |
 | [SaaS Builder Toolkit](https://github.com/awslabs/sbt-aws) | CDK constructs for SaaS control plane |
-| [AWS Compliance — GLBA](https://aws.amazon.com/compliance/glba/) | GLBA shared responsibility on AWS |
+| [AWS Compliance — GLBA](https://docs.aws.amazon.com/audit-manager/latest/userguide/gramm-leach-bliley-act.html) | GLBA shared responsibility on AWS |
 | [AWS for Financial Services](https://aws.amazon.com/financial-services/) | AWS FSI landing page and whitepapers |
 
 ## Quick Start — Agent Reference
@@ -253,6 +258,9 @@ Default save location: `docs/saas-architecture/` in workspace root.
 | "We're building a loan origination / credit platform" | `lending-and-credit.md` + `financial-compliance-foundations.md` | HLD, Adverse Action Notice design, ADR |
 | "We need SOX-compliant audit logging" | `audit-logging-and-access.md` + `financial-compliance-foundations.md` | SOX ITGC Control Matrix, Audit Log Coverage Matrix |
 | "We're building ISO 20022 / SWIFT payments" | `open-banking-and-interop.md` + `payments-and-ledger.md` | ADR, Financial Data Flow Map |
+| "Our platform serves UK banks" / "We're FCA regulated" | `regional-compliance-mapping.md` + `financial-compliance-foundations.md` | HLD (with UK controls), Isolation Matrix, ADR |
+| "We need UK Open Banking / OBIE APIs" | `regional-compliance-mapping.md` + `open-banking-and-interop.md` + `identity-and-onboarding.md` | ADR, Open Banking Consent Flow (OBIE variant) |
+| "We operate in both US and UK" | `regional-compliance-mapping.md` + `resilience-and-deployment.md` + `data-partitioning.md` | HLD (multi-region), Data Residency ADR, Isolation Matrix |
 
 ## Support & Legal
 
