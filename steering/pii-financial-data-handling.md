@@ -359,4 +359,4 @@ GLBA requires retention of certain records for 5 years. CCPA/GDPR allows consume
 - [GLBA — Privacy of Consumer Financial Information](https://www.ftc.gov/business-guidance/resources/how-comply-privacy-consumer-financial-information-rule-gramm-leach-bliley-act)
 - [CFPB — Protecting Consumer Financial Data](https://www.consumerfinance.gov/data-research/consumer-complaints/)
 - [AWS Compliance — PCI DSS](https://aws.amazon.com/compliance/pci-dss-level-1-faqs/)
-- [Building Tokenization Solutions on AWS](https://aws.amazon.com/solutions/financial-services/payment-tokenization/)
+- [Building Tokenization Solutions on AWS](https://aws.amazon.com/solutions/guidance/tokenization-to-improve-data-security-and-reduce-audit-scope-on-aws/)

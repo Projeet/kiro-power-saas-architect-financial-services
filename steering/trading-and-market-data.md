@@ -270,7 +270,7 @@ Applies to SCI entities: national securities exchanges, clearing agencies, certa
 ## References
 
 - [AWS for Capital Markets](https://aws.amazon.com/financial-services/capital-markets/)
-- [Low Latency Trading on AWS](https://aws.amazon.com/blogs/industries/low-latency-trading-on-aws/)
+- [Low Latency Trading on AWS](https://aws.amazon.com/blogs/industries/rethinking-the-low-latency-trade-value-proposition-using-aws-local-zones)
 - [SEC Rule 17a-4 — Record Retention](https://www.sec.gov/investment/amendments-electronic-recordkeeping-requirements-broker-dealers)
 - [SEC Rule 15c3-5 — Market Access](https://www.sec.gov/rules/final/2010/34-63241.pdf)
 - [FINRA Rules](https://www.finra.org/rules-guidance/rulebooks/finra-rules/)

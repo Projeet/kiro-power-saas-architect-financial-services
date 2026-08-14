@@ -238,7 +238,7 @@ When AI drives credit decisions, ECOA requires specific, actionable adverse acti
 
 ## References
 
-- [Federal Reserve SR 11-7 — Model Risk Management](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm)
+- [Federal Reserve SR 11-7 — Model Risk Management](https://www.federalreserve.gov/frrs/guidance/supervisory-guidance-on-model-risk-management.htm)
 - [Amazon Bedrock — Security and Compliance](https://docs.aws.amazon.com/bedrock/latest/userguide/security.html)
 - [Amazon SageMaker Clarify — Explainability](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html)
 - [CFPB — Adverse Action Notice Requirements](https://www.consumerfinance.gov/rules-policy/regulations/1002/c/)
