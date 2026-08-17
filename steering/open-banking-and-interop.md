@@ -293,5 +293,5 @@ Open banking APIs must be versioned — FDX releases major versions (v5, v6) wit
 - [ISO 20022 Standard](https://www.iso20022.org/iso-20022-standard)
 - [EBA PSD2 — Regulatory Technical Standards on SCA](https://www.eba.europa.eu/regulation-and-policy/payment-services-and-electronic-money/regulatory-technical-standards-on-strong-customer-authentication-and-common-and-secure-communication)
 - [SWIFT — ISO 20022 Migration](https://www.swift.com/standards/iso-20022-migration)
-- [FDX API Technical Specification](https://financialdataexchange.org/FDX/API)
+- [FDX API Technical Specification](https://financialdataexchange.org/)
 - [AWS API Gateway mTLS](https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mutual-tls.html)

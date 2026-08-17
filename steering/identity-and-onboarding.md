@@ -283,7 +283,7 @@ See `open-banking-and-interop.md` for full consent architecture.
 - [FFIEC Authentication and Access Guidance (2021)](https://www.ffiec.gov/guidance/Authentication-and-Access-to-Financial-Institution-Services-and-Systems.pdf)
 - [FDX API Standard — Authorization](https://financialdataexchange.org/)
 - [CFPB Section 1033 — Personal Financial Data Rights](https://www.consumerfinance.gov/personal-financial-data-rights/)
-- [FinCEN CDD / Beneficial Ownership Rule](https://www.fincen.gov/resources/statutes-regulations/cdd-final-rule)
+- [FinCEN CDD / Beneficial Ownership Rule](https://www.fincen.gov/resources/statutes-and-regulations/cdd-final-rule)
 - [PSD2 — Strong Customer Authentication (EBA RTS)](https://www.eba.europa.eu/regulation-and-policy/payment-services-and-electronic-money/regulatory-technical-standards-on-strong-customer-authentication-and-common-and-secure-communication)
 - [SaaS Authentication with Amazon Cognito](https://aws.amazon.com/blogs/security/saas-authentication-identity-management-with-amazon-cognito-user-pools/)
 - [Tenant Onboarding Best Practices with the SaaS Lens](https://aws.amazon.com/blogs/apn/tenant-onboarding-best-practices-in-saas-with-the-aws-well-architected-saas-lens/)

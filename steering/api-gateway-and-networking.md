@@ -227,5 +227,5 @@ If your SaaS platform serves many institutions needing SWIFT:
 - [AWS API Gateway — Mutual TLS](https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mutual-tls.html)
 - [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html)
 - [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html)
-- [SWIFT on AWS](https://aws.amazon.com/financial-services/swift/)
+- [SWIFT on AWS](https://aws.amazon.com/financial-services/)
 - [AWS Financial Services — Network Security](https://aws.amazon.com/financial-services/security-compliance/)

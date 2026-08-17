@@ -453,7 +453,7 @@ AWS secures the infrastructure (physical security, hypervisor, global network). 
 - [PCI-DSS v4.0 Standard](https://www.pcisecuritystandards.org/document_library/)
 - [FTC Safeguards Rule — GLBA](https://www.ftc.gov/business-guidance/resources/ftc-safeguards-rule-what-your-business-needs-know)
 - [SOX Section 404 — IT Controls](https://www.sec.gov/divisions/finance/verifyadequacy.htm)
-- [FinCEN BSA/AML Statutes and Regulations](https://www.fincen.gov/resources/statutes-regulations/bank-secrecy-act)
+- [FinCEN BSA/AML Statutes and Regulations](https://fincen.gov/resources/statutes-and-regulations/bank-secrecy-act)
 - [OFAC Sanctions Programs](https://ofac.treasury.gov/)
 - [FFIEC IT Handbook](https://ithandbook.ffiec.gov/)
 - [OCC Third-Party Risk Guidance — Bulletin 2023-17](https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html)

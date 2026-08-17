@@ -278,10 +278,10 @@ See `genai-and-financial-data.md` for detailed model risk architecture.
 
 ## References
 
-- [FinCEN BSA/AML Statutes and Regulations](https://www.fincen.gov/resources/statutes-regulations/bank-secrecy-act)
+- [FinCEN BSA/AML Statutes and Regulations](https://fincen.gov/resources/statutes-and-regulations/bank-secrecy-act)
 - [FinCEN SAR Filing Instructions](https://www.fincen.gov/resources/filing-information)
 - [OFAC SDN List](https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists)
 - [Amazon Fraud Detector Developer Guide](https://docs.aws.amazon.com/frauddetector/latest/ug/what-is-frauddetector.html)
-- [Federal Reserve SR 11-7 (Model Risk Management)](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm)
+- [Federal Reserve SR 11-7 (Model Risk Management)](https://www.federalreserve.gov/frrs/guidance/supervisory-guidance-on-model-risk-management.htm)
 - [FFIEC BSA/AML Examination Manual](https://bsaaml.ffiec.gov/manual)
-- [AWS Financial Services — Fraud Prevention](https://aws.amazon.com/financial-services/fraud-detection/)
+- [AWS Financial Services — Fraud Prevention](https://aws.amazon.com/solutions/guidance/fraud-detection-using-machine-learning-on-aws/)
